@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 560">
+  <path d="M256 20a230 230 0 0 1 60 452l-60 66-60-66A230 230 0 0 1 256 20z" fill="#e9e9ea"/>
+  <circle cx="256" cy="250" r="192" fill="#ffffff"/>
+  <circle cx="256" cy="250" r="164" fill="#0e2a5e"/>
+  <text x="256" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="66" font-weight="900" font-style="italic" fill="#ffd400">95.5</text>
+  <text x="256" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="56" font-weight="900" fill="#ffffff">WSB</text>
+  <text x="256" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="1">ATLANTA'S NEWS &amp; TALK</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 130">
+  <path d="M30 6C14 22 4 40 6 60c2 22 20 34 20 34s-8-16-4-32c3-13 12-20 12-34C34 18 32 10 30 6z" fill="#111"/>
+  <path d="M40 2c-8 18-10 34-4 48 5 13 18 20 18 20s-4-14 2-28c5-12 2-24-16-40z" fill="#111"/>
+  <circle cx="22" cy="100" r="10" fill="#f2b90f"/>
+  <text x="72" y="90" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="800" letter-spacing="2" fill="#111">ARTS ATL</text>
+</svg>

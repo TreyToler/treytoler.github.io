@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 150">
+  <path d="M20 15h55c10 0 15 6 15 15v90c0 10-6 16-16 16H35c-10 0-15-6-15-15z" fill="#12556b"/>
+  <path d="M75 15h12v121h-12z" fill="#12556b"/>
+  <path d="M75 15l12 0 0 12-12 -2z" fill="#0d3f50"/>
+  <path d="M47 68c4-8 12-8 15 0 3-8 11-8 15 0 4 9-4 18-15 26-11-8-19-17-15-26z" fill="#3fd0d4"/>
+  <text x="120" y="90" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="800" fill="#2c2c2c" letter-spacing="1">FOREWORD</text>
+  <text x="122" y="126" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="800" fill="#2c2c2c" letter-spacing="4">REVIEWS</text>
+</svg>
