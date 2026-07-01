@@ -228,18 +228,39 @@ img { max-width: 100%; display: block; }
 .strip-logos {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 36px;
 }
 
-.strip-logos span {
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--ink-soft);
+.press-logo {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  opacity: 0.85;
+  filter: grayscale(1);
+  transition: opacity 0.15s ease, filter 0.15s ease, transform 0.15s ease;
 }
+
+.press-logo:hover {
+  opacity: 1;
+  filter: grayscale(0);
+  transform: translateY(-1px);
+}
+
+.press-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.press-logo-pw img,
+.press-logo-kirkus img { border-radius: 6px; }
+
+.press-logo-artsatl img,
+.press-logo-foreword img { height: 26px; }
+
+.press-logo-wsb img { height: 52px; }
 
 /* Sections */
 .section { padding: 96px 24px; }
