@@ -690,15 +690,54 @@ blockquote span {
   background: var(--ink);
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.newsletter-inner { max-width: 640px; margin: 0 auto; }
+.newsletter-bg-media {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  width: 420px;
+  max-width: 46%;
+  aspect-ratio: 1;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  -webkit-mask-image: radial-gradient(circle, #000 42%, transparent 72%);
+  mask-image: radial-gradient(circle, #000 42%, transparent 72%);
+}
+
+.newsletter-bg-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 760px) {
+  .newsletter-bg-media { display: none; }
+}
+
+.newsletter-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+}
 
 .newsletter h2 {
   font-family: 'Fraunces', serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 600;
   margin-bottom: 16px;
+}
+
+.newsletter-glow {
+  text-shadow:
+    0 0 18px rgba(0,173,227,0.85),
+    0 0 40px rgba(0,173,227,0.55),
+    0 0 80px rgba(0,173,227,0.35);
 }
 
 .newsletter-lead {
