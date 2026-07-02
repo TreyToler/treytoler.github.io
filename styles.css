@@ -300,29 +300,34 @@ img { max-width: 100%; display: block; }
 .speaking-visual {
   position: relative;
   overflow: hidden;
+  background: var(--ink);
   color: #fff;
 }
 
-.speaking-bg-media {
+.speaking-bg-media-top {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 640px;
   z-index: 0;
 }
 
-.speaking-bg-media img {
+.speaking-bg-media-top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 15%;
-  filter: contrast(1.05);
+  object-position: 62% 18%;
+  filter: grayscale(0.2) contrast(1.05);
 }
 
-.speaking-bg-media::after {
+.speaking-bg-media-top::after {
   content: "";
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(100deg, rgba(15,17,21,0.94) 0%, rgba(15,17,21,0.9) 35%, rgba(15,17,21,0.6) 65%, rgba(15,17,21,0.35) 100%);
+    linear-gradient(100deg, rgba(15,17,21,0.93) 0%, rgba(15,17,21,0.78) 38%, rgba(15,17,21,0.4) 68%, rgba(15,17,21,0.1) 100%),
+    linear-gradient(to bottom, rgba(15,17,21,0) 55%, var(--ink) 100%);
 }
 
 .speaking-visual .section-inner { position: relative; z-index: 1; }
@@ -333,6 +338,14 @@ img { max-width: 100%; display: block; }
   color: rgba(255,255,255,0.75);
 }
 
+.speaking-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+  color: #fff;
+  margin-bottom: 10px;
+}
+
 .speaking-visual .section-title { color: #fff; }
 
 .speaking-visual .section-lead { color: rgba(255,255,255,0.8); }
@@ -341,10 +354,37 @@ img { max-width: 100%; display: block; }
 
 .speaking-visual .pull-quote span { color: rgba(255,255,255,0.65); }
 
+.speaking-experience-head {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  color: #fff;
+  margin: 48px 0 24px;
+}
+
+.cards-three { grid-template-columns: repeat(3, 1fr); }
+
+.speaking-press-quote {
+  color: rgba(255,255,255,0.75);
+  font-style: italic;
+  font-size: 1.02rem;
+  max-width: 720px;
+  margin: 8px 0 40px;
+}
+
+@media (max-width: 900px) {
+  .cards-three { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 700px) {
-  .speaking-bg-media::after {
+  .speaking-bg-media-top { height: 420px; }
+
+  .speaking-bg-media-top img { object-position: 68% 12%; }
+
+  .speaking-bg-media-top::after {
     background:
-      linear-gradient(0deg, rgba(15,17,21,0.95) 0%, rgba(15,17,21,0.85) 45%, rgba(15,17,21,0.55) 100%);
+      linear-gradient(0deg, rgba(15,17,21,0.95) 0%, rgba(15,17,21,0.8) 45%, rgba(15,17,21,0.4) 75%, rgba(15,17,21,0.15) 100%),
+      linear-gradient(to bottom, rgba(15,17,21,0) 45%, var(--ink) 100%);
   }
 }
 
