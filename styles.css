@@ -792,6 +792,41 @@ blockquote span {
 
 .newsletter .hero-actions { justify-content: center; }
 
+.substack-feed {
+  list-style: none;
+  margin: 40px auto 0;
+  padding: 0;
+  max-width: 520px;
+  text-align: left;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.substack-feed li {
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.substack-feed a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 4px;
+  transition: color 0.15s ease;
+}
+
+.substack-feed a:hover { color: var(--blue); }
+
+.substack-feed .substack-title {
+  font-weight: 600;
+  font-size: 0.98rem;
+}
+
+.substack-feed .substack-date {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+}
+
 /* Media / video */
 .video-wrap {
   position: relative;

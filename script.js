@@ -55,3 +55,46 @@ navLinks.querySelectorAll('a').forEach(link => {
     console.warn('Instagram feed not loaded yet:', err.message);
   }
 })();
+
+// Recent Substack posts — reads data/substack.json, which the
+// "Sync Substack Feed" GitHub Action keeps refreshed from the public RSS
+// feed. If there's no data yet, the list just stays empty.
+(async function loadSubstackFeed() {
+  const list = document.getElementById('substackFeed');
+  if (!list) return;
+
+  try {
+    const res = await fetch('data/substack.json', { cache: 'no-store' });
+    if (!res.ok) return;
+    const { posts } = await res.json();
+    if (!Array.isArray(posts) || posts.length === 0) return;
+
+    const formatter = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    posts.forEach(post => {
+      if (!post.title || !post.link) return;
+
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = post.link;
+      a.target = '_blank';
+      a.rel = 'noopener';
+
+      const title = document.createElement('span');
+      title.className = 'substack-title';
+      title.textContent = post.title;
+
+      const date = document.createElement('span');
+      date.className = 'substack-date';
+      const parsed = post.pubDate ? new Date(post.pubDate) : null;
+      date.textContent = parsed && !isNaN(parsed) ? formatter.format(parsed) : '';
+
+      a.appendChild(title);
+      a.appendChild(date);
+      li.appendChild(a);
+      list.appendChild(li);
+    });
+  } catch (err) {
+    console.warn('Substack feed not loaded yet:', err.message);
+  }
+})();
