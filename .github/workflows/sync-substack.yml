@@ -1,0 +1,28 @@
+name: Sync Substack Feed
+
+on:
+  schedule:
+    # Every 6 hours
+    - cron: "0 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch latest Substack posts
+        run: node scripts/fetch-substack.mjs
+
+      - name: Commit updated feed data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/substack.json
+          git diff --quiet --cached || git commit -m "Update Substack feed data [skip ci]"
+          git push
