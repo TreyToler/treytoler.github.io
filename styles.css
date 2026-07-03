@@ -50,33 +50,11 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo-mark {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--gradient-brand);
-  color: #fff;
   font-family: 'Fraunces', serif;
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: -0.02em;
-}
-
-.nav-logo-text {
-  font-family: 'Fraunces', serif;
-  font-weight: 700;
+  font-weight: 800;
   font-style: italic;
-  font-size: 1.55rem;
-  letter-spacing: -0.01em;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
   background: var(--gradient-brand);
   -webkit-background-clip: text;
   background-clip: text;
@@ -146,7 +124,7 @@ img { max-width: 100%; display: block; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(100deg, rgba(15,17,21,0.9) 0%, rgba(15,17,21,0.78) 34%, rgba(15,17,21,0.3) 58%, rgba(15,17,21,0.05) 78%),
+    linear-gradient(100deg, rgba(15,17,21,0.92) 0%, rgba(15,17,21,0.82) 30%, rgba(15,17,21,0.4) 48%, rgba(15,17,21,0.05) 68%),
     linear-gradient(0deg, rgba(15,17,21,0.55) 0%, rgba(15,17,21,0.15) 40%, rgba(0,173,227,0.2) 100%);
 }
 
@@ -176,10 +154,10 @@ img { max-width: 100%; display: block; }
 
 .hero h1 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.6rem, 3.4vw, 2.5rem);
   font-weight: 600;
   line-height: 1.25;
-  max-width: 560px;
+  max-width: min(460px, 42vw);
   margin-bottom: 24px;
 }
 
@@ -218,9 +196,9 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-sub {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: rgba(255,255,255,0.85);
-  max-width: 520px;
+  max-width: min(420px, 38vw);
   margin: 0 0 32px;
 }
 
