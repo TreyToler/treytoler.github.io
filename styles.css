@@ -55,10 +55,7 @@ img { max-width: 100%; display: block; }
   font-style: italic;
   font-size: 2rem;
   letter-spacing: -0.02em;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--blue);
 }
 
 .nav-links {
@@ -151,6 +148,15 @@ img { max-width: 100%; display: block; }
 }
 
 .eyebrow-dark { margin-bottom: 14px; }
+
+.hero .eyebrow {
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: var(--blue);
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
 
 .hero h1 {
   font-family: 'Fraunces', serif;
