@@ -1,0 +1,44 @@
+name: Compress Contact Photo
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install image tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y imagemagick pngquant
+          pip install --quiet rembg onnxruntime
+
+      - name: Remove background
+        run: |
+          rembg i contact-photo.png contact-photo-nobg.png
+
+      - name: Resize and compress
+        run: |
+          convert contact-photo-nobg.png -resize 600x600\> contact-photo-resized.png
+          pngquant --force --quality=65-85 --output contact-photo.png contact-photo-resized.png
+          rm -f contact-photo-nobg.png contact-photo-resized.png
+          ls -lh contact-photo.png
+
+      - name: Commit processed image
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add contact-photo.png
+          git diff --quiet --cached || git commit -m "Remove background, resize, and compress contact-photo.png"
+          git push
