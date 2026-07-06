@@ -447,16 +447,24 @@ img { max-width: 100%; display: block; }
 .contact-bg-media {
   position: absolute;
   top: 50%;
-  right: 6%;
+  right: 8%;
   transform: translateY(-50%);
-  width: 190px;
-  max-width: 20%;
+  width: 300px;
+  max-width: 32%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.55;
-  filter: grayscale(0.35) contrast(1.05) brightness(0.95);
-  -webkit-mask-image: radial-gradient(ellipse 65% 65% at center, #000 40%, transparent 88%);
-  mask-image: radial-gradient(ellipse 65% 65% at center, #000 40%, transparent 88%);
+  opacity: 0.85;
+  filter: grayscale(0.3) contrast(1.05) brightness(0.95);
+  -webkit-mask-image: radial-gradient(ellipse 62% 62% at center, #000 45%, transparent 85%);
+  mask-image: radial-gradient(ellipse 62% 62% at center, #000 45%, transparent 85%);
+}
+
+.contact-bg-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 65% 65% at center, rgba(0,173,227,0.22) 0%, rgba(0,173,227,0.08) 32%, rgba(15,17,21,0.75) 62%, var(--ink) 100%);
+  pointer-events: none;
 }
 
 .contact-bg-media img {
