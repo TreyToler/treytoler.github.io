@@ -596,7 +596,6 @@ blockquote span {
   right: 24px;
   width: 110px;
   opacity: 0.85;
-  transform: scaleX(-1);
   pointer-events: none;
 }
 
@@ -627,6 +626,24 @@ blockquote span {
   line-height: 1.2;
   margin-bottom: 28px;
   max-width: 620px;
+}
+
+.about-split-text h2.about-quote-heading {
+  font-style: italic;
+  font-weight: 500;
+  border-left: 4px solid;
+  border-image: var(--gradient) 1;
+  padding-left: 22px;
+}
+
+.about-quote-heading span {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 14px;
 }
 
 .about-split .about-copy p {
