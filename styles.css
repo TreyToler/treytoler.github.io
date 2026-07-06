@@ -446,31 +446,29 @@ img { max-width: 100%; display: block; }
 
 .contact-bg-media {
   position: absolute;
-  top: 50%;
-  right: 8%;
-  transform: translateY(-50%);
-  width: 300px;
-  max-width: 32%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  max-width: 460px;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.85;
-  filter: grayscale(0.3) contrast(1.05) brightness(0.95);
-  -webkit-mask-image: radial-gradient(ellipse 62% 62% at center, #000 45%, transparent 85%);
-  mask-image: radial-gradient(ellipse 62% 62% at center, #000 45%, transparent 85%);
 }
 
 .contact-bg-media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 65% 65% at center, rgba(0,173,227,0.22) 0%, rgba(0,173,227,0.08) 32%, rgba(15,17,21,0.75) 62%, var(--ink) 100%);
-  pointer-events: none;
+  background: linear-gradient(90deg, var(--ink) 0%, rgba(15,17,21,0.85) 20%, rgba(15,17,21,0.35) 50%, rgba(15,17,21,0.05) 80%);
 }
 
 .contact-bg-media img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 15%;
+  opacity: 0.9;
+  filter: grayscale(0.15) contrast(1.05) brightness(0.95);
 }
 
 .contact-visual .section-inner { position: relative; z-index: 1; }
