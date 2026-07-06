@@ -299,69 +299,6 @@ img { max-width: 100%; display: block; }
 .press-logo-artsatl img,
 .press-logo-foreword img { height: 35px; }
 
-/* Praise ticker */
-.ticker-section {
-  background: var(--ink);
-  padding: 22px 0;
-  overflow: hidden;
-}
-
-.ticker-track {
-  display: flex;
-  width: max-content;
-  animation: ticker-scroll 64s linear infinite;
-}
-
-.ticker-track:hover { animation-play-state: paused; }
-
-.ticker-content {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  white-space: nowrap;
-  font-family: 'Fraunces', serif;
-  font-style: italic;
-  font-size: 1rem;
-  color: rgba(255,255,255,0.85);
-  padding: 0 36px;
-  position: relative;
-}
-
-.ticker-item::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gradient);
-}
-
-.ticker-item strong {
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 0.85rem;
-  color: var(--blue);
-}
-
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .ticker-track { animation: none; }
-}
-
 .press-logo-wsb img { height: 68px; }
 
 /* Sections */
