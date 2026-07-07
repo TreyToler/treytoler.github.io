@@ -98,3 +98,56 @@ navLinks.querySelectorAll('a').forEach(link => {
     console.warn('Substack feed not loaded yet:', err.message);
   }
 })();
+
+// Praise carousel — cycles through quote cards, showing as many as fit
+// (3 on desktop, 1 on mobile per the CSS breakpoint), wrapping around
+// at either end.
+(function initPraiseCarousel() {
+  const track = document.getElementById('praiseTrack');
+  const prevBtn = document.getElementById('praisePrev');
+  const nextBtn = document.getElementById('praiseNext');
+  if (!track || !prevBtn || !nextBtn) return;
+
+  const cards = Array.from(track.children);
+  if (cards.length === 0) return;
+
+  let index = 0;
+
+  function cardStep() {
+    const style = window.getComputedStyle(track);
+    const gap = parseFloat(style.columnGap || style.gap || '0') || 0;
+    return cards[0].getBoundingClientRect().width + gap;
+  }
+
+  function visibleCount() {
+    const step = cardStep();
+    if (!step) return 1;
+    return Math.max(1, Math.round(track.parentElement.clientWidth / step));
+  }
+
+  function maxIndex() {
+    return Math.max(0, cards.length - visibleCount());
+  }
+
+  function update() {
+    const step = cardStep();
+    track.style.transform = `translateX(-${index * step}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = index + 1 > maxIndex() ? 0 : index + 1;
+    update();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = index - 1 < 0 ? maxIndex() : index - 1;
+    update();
+  });
+
+  window.addEventListener('resize', () => {
+    index = Math.min(index, maxIndex());
+    update();
+  });
+
+  update();
+})();
