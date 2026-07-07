@@ -1,0 +1,34 @@
+name: Compress Book Cover
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install image tools
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y imagemagick pngquant
+
+      - name: Resize and compress
+        run: |
+          convert Good-Damage-promo.png -resize 1200x1200\> Good-Damage-promo-resized.png
+          pngquant --force --quality=70-90 --output Good-Damage-promo.png Good-Damage-promo-resized.png
+          rm -f Good-Damage-promo-resized.png
+          ls -lh Good-Damage-promo.png
+
+      - name: Commit compressed image
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Good-Damage-promo.png
+          git diff --quiet --cached || git commit -m "Resize and compress Good-Damage-promo.png"
+          git push
