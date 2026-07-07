@@ -99,14 +99,13 @@ navLinks.querySelectorAll('a').forEach(link => {
   }
 })();
 
-// Praise carousel — cycles through quote cards, showing as many as fit
-// (3 on desktop, 1 on mobile per the CSS breakpoint), wrapping around
-// at either end.
+// Praise carousel — a single forward arrow advances through the quote
+// cards (3 visible on desktop, 1 on mobile per the CSS breakpoint),
+// looping back to the start once it reaches the end.
 (function initPraiseCarousel() {
   const track = document.getElementById('praiseTrack');
-  const prevBtn = document.getElementById('praisePrev');
   const nextBtn = document.getElementById('praiseNext');
-  if (!track || !prevBtn || !nextBtn) return;
+  if (!track || !nextBtn) return;
 
   const cards = Array.from(track.children);
   if (cards.length === 0) return;
@@ -136,11 +135,6 @@ navLinks.querySelectorAll('a').forEach(link => {
 
   nextBtn.addEventListener('click', () => {
     index = index + 1 > maxIndex() ? 0 : index + 1;
-    update();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    index = index - 1 < 0 ? maxIndex() : index - 1;
     update();
   });
 
