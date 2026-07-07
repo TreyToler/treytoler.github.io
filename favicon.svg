@@ -7,5 +7,10 @@
   </defs>
   <rect width="64" height="64" rx="14" fill="#0f1115"/>
   <rect width="64" height="64" rx="14" fill="url(#g)" opacity="0.18"/>
-  <text x="32" y="45" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="700" font-size="38" fill="url(#g)">T</text>
+  <!-- Two block "T" letters side by side, each with a crossbar that
+       overhangs its stem on both sides so it actually reads as T T -->
+  <rect x="4" y="15" width="22" height="7" rx="2" fill="url(#g)"/>
+  <rect x="11" y="15" width="8" height="32" rx="2" fill="url(#g)"/>
+  <rect x="38" y="15" width="22" height="7" rx="2" fill="url(#g)"/>
+  <rect x="45" y="15" width="8" height="32" rx="2" fill="url(#g)"/>
 </svg>
