@@ -986,8 +986,7 @@ blockquote span {
 
 .video-wrap {
   position: relative;
-  padding-bottom: 177.78%; /* 9:16 portrait */
-  height: 0;
+  aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: 0 24px 60px -24px rgba(15,17,21,0.35);
