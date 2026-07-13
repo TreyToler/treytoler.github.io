@@ -872,7 +872,7 @@ blockquote span {
   padding: 26px;
 }
 
-.card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--ink); }
 
 .card p {
   color: var(--ink-soft);
