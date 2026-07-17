@@ -25,7 +25,7 @@ body {
   line-height: 1.55;
 }
 
-h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; margin: 0; }
+h1, h2, h3, h4 { font-weight: 800; letter-spacing: -0.02em; margin: 0; }
 
 a { color: inherit; text-decoration: none; }
 
@@ -424,6 +424,61 @@ img { max-width: 100%; display: block; }
 }
 
 .cards-three { grid-template-columns: repeat(3, 1fr); }
+
+.speaking-topics {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 640px;
+  margin: 24px 0 32px;
+}
+
+.speaking-topic {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.speaking-topic-num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0,173,227,0.16);
+  color: #5cc9ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.speaking-topic:nth-child(2) .speaking-topic-num {
+  background: rgba(221,30,142,0.16);
+  color: #e878b4;
+}
+
+.speaking-topic h4 {
+  font-size: 1.05rem;
+  margin: 0 0 4px;
+  color: #fff;
+}
+
+.speaking-topic p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.65);
+}
+
+.speaking-format-line {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding-top: 20px;
+  margin: 0 0 28px;
+  max-width: 640px;
+}
 
 .speaking-press-quote {
   color: rgba(255,255,255,0.75);
