@@ -567,13 +567,14 @@ blockquote span {
 
 .pull-quote {
   font-family: 'Fraunces', serif;
-  font-size: 1.4rem;
+  font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.4;
-  border-left: 4px solid;
+  border-left: 3px solid;
   border-image: var(--gradient) 1;
-  padding-left: 22px;
-  margin: 40px 0 32px;
+  padding-left: 18px;
+  margin: 28px 0 0;
+  max-width: 460px;
 }
 
 /* Praise */
