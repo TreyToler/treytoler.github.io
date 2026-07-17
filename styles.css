@@ -570,11 +570,18 @@ blockquote span {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.4;
-  border-left: 3px solid;
-  border-image: var(--gradient) 1;
-  padding-left: 18px;
   margin: 28px 0 0;
   max-width: 460px;
+}
+
+.pull-quote::before {
+  content: '\201C';
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 2.4rem;
+  line-height: 0.5;
+  color: var(--blue);
+  margin-bottom: 6px;
 }
 
 /* Praise */
@@ -755,7 +762,6 @@ blockquote span {
 
 .pull-quote-light {
   color: #fff;
-  border-image: var(--gradient) 1;
 }
 
 .pull-quote-light span { color: rgba(255,255,255,0.6); }
