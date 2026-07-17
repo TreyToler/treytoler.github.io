@@ -356,23 +356,24 @@ img { max-width: 100%; display: block; }
   font-family: 'Fraunces', serif;
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
-  line-height: 1.35;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.4;
   color: #fff;
-  border-left: 4px solid;
+  border-left: 3px solid;
   border-image: var(--gradient) 1;
-  padding-left: 22px;
-  margin: 20px 0 28px;
+  padding-left: 18px;
+  margin: 16px 0 8px;
+  max-width: 460px;
 }
 
 .speaking-lead-quote span {
   display: block;
   font-family: 'Inter', sans-serif;
   font-style: normal;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: rgba(255,255,255,0.65);
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 .speaking-tagline {
