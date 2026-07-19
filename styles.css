@@ -701,7 +701,7 @@ blockquote span {
 
 .about-hummingbird {
   position: absolute;
-  top: 28px;
+  top: -22px;
   right: 24px;
   width: 110px;
   opacity: 0.85;
@@ -709,7 +709,7 @@ blockquote span {
 }
 
 @media (max-width: 860px) {
-  .about-hummingbird { width: 72px; top: 16px; right: 16px; }
+  .about-hummingbird { width: 72px; top: -12px; right: 16px; }
 }
 
 .about-split .eyebrow {
