@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://treytoler.com/sitemap.xml

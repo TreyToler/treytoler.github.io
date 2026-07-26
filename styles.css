@@ -314,7 +314,42 @@ img { max-width: 100%; display: block; }
 /* Sections */
 .section { padding: 96px 24px; }
 
+/* Keep anchor-linked sections clear of the sticky nav on scroll landing */
+section[id] { scroll-margin-top: 88px; }
+
 .section-alt { background: var(--paper-alt); }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 760px;
+  margin-top: 12px;
+}
+
+.faq-item {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:first-child { border-top: 1px solid var(--border); }
+
+.faq-item h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.faq-item p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.faq-item p a { color: var(--blue); font-weight: 600; }
+.faq-item p a:hover { color: var(--pink); }
 
 .speaking-visual {
   position: relative;
